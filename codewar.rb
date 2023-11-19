@@ -20,3 +20,4 @@ to_underscore("App7Test")
 p  "EXPECTED: app7_test"
 to_underscore(1)
 p  "EXPECTED: 1"
+
