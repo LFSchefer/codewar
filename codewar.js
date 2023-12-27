@@ -1,16 +1,12 @@
-var Calculator = {
-  average: function() {
-    let keys = Object.keys(arguments);
-    if (keys.length === 0) {
-      return 0
-    };
-    let sum = 0;
-   keys.forEach(key => {
-     sum += arguments[keys[key]]
-    })
-    return sum/keys.length
-  }
- };
+function lostSheep(friday,saturday,total){
+  let sum = 0;
+  arguments['0'].forEach(element => {sum += element});
+  arguments['1'].forEach(elem => {sum += elem});
+  return arguments['2'] - sum
+}
 
- Calculator.average(3,4,9)
- Calculator.average()
+
+lostSheep([1,2],[3,4],15)
+console.log("expected 5")
+lostSheep([5,1,4],[5,4],29)
+console.log("expected  10")
