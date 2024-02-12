@@ -1,12 +1,17 @@
-function lostSheep(friday,saturday,total){
-  let sum = 0;
-  arguments['0'].forEach(element => {sum += element});
-  arguments['1'].forEach(elem => {sum += elem});
-  return arguments['2'] - sum
+const obj = {
+  a: 12,
+  b: 24,
+  c: 18,
+  d: 4,
+  e: 34
 }
 
+obj.x = 55;
 
-lostSheep([1,2],[3,4],15)
-console.log("expected 5")
-lostSheep([5,1,4],[5,4],29)
-console.log("expected  10")
+const result = Object.entries(obj).sort((a,b)=>b[1]-a[1])
+
+console.log(result)
+
+result.forEach(val => {
+  console.log(`${val[0]}: ${val[1]}`)
+})
