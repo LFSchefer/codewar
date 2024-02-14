@@ -41,3 +41,7 @@ score.lf === undefined ? score.lf = {color: "#fffff", score: 7} : score.lf.score
 
 const test = Object.entries(score).sort((a,b)=>{return b[1].score-a[1].score})
 console.log(test)
+
+test.forEach((val,index)=>{
+  console.log(index + 1)
+})
