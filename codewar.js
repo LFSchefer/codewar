@@ -1,39 +1,17 @@
-function evaluate(arr){
-  const numbers = [];
-  const operators = [];
-  let result = 0;
-  if (arr.length % 2 == 0) {
-    console.log(undefined);
-    return undefined
+function digPow(n, p){
+  let pow = 0;
+  const digits = Array.from(String(n), Number)
+  for (let i = 0; i < digits.length; i++) {
+    pow +=  Math.pow(digits[i], p+i)
   }
-  arr.forEach((element, index) => {
-    if (index %  2 == 0 && !isNaN(parseInt(element)) ) {
-      numbers.push(element);
-    }
-    else if (index % 2 == 1 && isNaN(parseInt(element))) {
-      operators.push(element);
-    }
-    else {
-      console.log(undefined);
-      return undefined;
-    }
-  });
-    // console.log(numbers);
-    // console.log(operators);
-    for (let index = numbers.length; index >= 0; index--) {
-      console.log(numbers[index]);
-      result += numbers[index] operators[index] numbers[index -1];
-    }
-
+  console.log((pow / n))
+  return Number.isInteger(pow / n) ? pow / n : -1
 }
 
-evaluate(['10', '+', '20', '*','3']);
-console.log("Solution: 70");
-evaluate(['10', '+', '20', '*','3', '+', '30']);
-console.log("Solution: 100");
-evaluate(['10', '+', '20', '*','3', '*']);
-console.log("Solution: Undefined");
-evaluate(['+', '10', '+', '20', '*','3']);
-console.log("Solution: Undefined");
-evaluate(['10', '10', '+', '20', '*','3']);
-console.log("Solution: Undefined");
+
+// console.log(1)
+digPow(89, 1)
+// console.log(-1)
+digPow(92, 1)
+// console.log(51)
+digPow(46288, 3)
